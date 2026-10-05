@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#071239" />
+    <meta name="description" content="Viajes Palma: traslados entre Tetela y Puebla, paquetería, mandados, traslados hospitalarios y viajes especiales." />
+    <title>Viajes Palma | Tetela ↔ Puebla</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23071239'/%3E%3Cpath d='M19 51c6-10 9-21 11-38h4c2 17 5 28 11 38' fill='none' stroke='%23e5b84c' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M28 24h8M26 34h12M23 44h18' stroke='%23fff' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E" />
+    <style>
+      :root {
+        --navy: #071239;
+        --navy-soft: #102052;
+        --cream: #f8f6ef;
+        --white: #fff;
+        --gold: #e5b84c;
+        --gold-dark: #c5911e;
+        --ink: #17203a;
+        --muted: #5d6475;
+        --line: rgba(7, 18, 57, 0.12);
+        --shadow: 0 24px 70px rgba(7, 18, 57, 0.14);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--cream);
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+      a { color: inherit; }
+      img { display: block; max-width: 100%; }
+      .container { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+
+      .topbar {
+        position: absolute;
+        z-index: 10;
+        inset: 0 0 auto;
+        padding: 18px 0;
+        color: var(--white);
+      }
+      .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+      .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+      .brand-mark {
+        width: 58px; height: 58px; border-radius: 16px; object-fit: cover;
+        border: 1px solid rgba(255,255,255,.24); box-shadow: 0 8px 24px rgba(0,0,0,.2);
+      }
+      .brand-copy { display: grid; line-height: 1.05; }
+      .brand-copy strong { font-size: 1.08rem; letter-spacing: .12em; text-transform: uppercase; }
+      .brand-copy span { color: rgba(255,255,255,.68); font-size: .75rem; letter-spacing: .16em; text-transform: uppercase; }
+      .nav-call { font-weight: 750; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.5); }
+
+      .hero {
+        position: relative; min-height: 720px; display: grid; align-items: center; overflow: hidden;
+        color: var(--white); background: var(--navy);
+      }
+      .hero::before {
+        content: ""; position: absolute; inset: 0;
+        background:
+          linear-gradient(90deg, rgba(5,12,40,.97) 0%, rgba(5,12,40,.84) 46%, rgba(5,12,40,.22) 100%),
+          linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.42)),
+          url("assets/hero-ertiga.png") center / cover no-repeat;
+      }
+      .hero::after {
+        content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 92px;
+        background: var(--cream); clip-path: polygon(0 76%, 64% 14%, 100% 57%, 100% 100%, 0 100%);
+      }
+      .hero-inner { position: relative; z-index: 1; padding: 150px 0 128px; }
+      .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 20px; color: var(--gold); font-weight: 800; letter-spacing: .13em; text-transform: uppercase; font-size: .8rem; }
+      .eyebrow::before { content: ""; width: 42px; height: 2px; background: currentColor; }
+      h1 { max-width: 780px; margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(3.2rem, 7vw, 6.4rem); line-height: .94; letter-spacing: -.045em; font-weight: 500; }
+      h1 span { color: var(--gold); font-style: italic; }
+      .hero-lead { max-width: 590px; margin: 28px 0 34px; font-size: clamp(1.06rem, 2vw, 1.25rem); color: rgba(255,255,255,.82); }
+      .actions { display: flex; flex-wrap: wrap; gap: 13px; }
+      .btn { min-height: 54px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 0 22px; border: 1px solid transparent; border-radius: 999px; text-decoration: none; font-weight: 800; transition: transform .2s ease, background .2s ease, border-color .2s ease; }
+      .btn:hover { transform: translateY(-2px); }
+      .btn-primary { background: var(--gold); color: var(--navy); }
+      .btn-primary:hover { background: #f0c969; }
+      .btn-secondary { border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.08); color: var(--white); backdrop-filter: blur(8px); }
+      .btn-secondary:hover { border-color: var(--white); background: rgba(255,255,255,.14); }
+      .hero-note { margin-top: 24px; display: flex; align-items: center; gap: 10px; font-size: .92rem; color: rgba(255,255,255,.68); }
+      .hero-note i { width: 9px; height: 9px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 6px rgba(229,184,76,.14); }
+
+      section { padding: 92px 0; }
+      .section-head { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; align-items: end; margin-bottom: 44px; }
+      .kicker { color: var(--gold-dark); font-weight: 850; letter-spacing: .14em; text-transform: uppercase; font-size: .78rem; }
+      h2 { margin: 9px 0 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.35rem, 5vw, 4.3rem); line-height: 1.03; letter-spacing: -.035em; font-weight: 500; color: var(--navy); }
+      .section-head p { margin: 0; color: var(--muted); font-size: 1.05rem; max-width: 580px; }
+
+      .services-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+      .service-card { min-height: 210px; padding: 28px; background: var(--white); border: 1px solid var(--line); border-radius: 24px; box-shadow: 0 10px 34px rgba(7,18,57,.05); display: flex; flex-direction: column; justify-content: space-between; }
+      .service-card:nth-child(1), .service-card:nth-child(2) { grid-column: span 6; }
+      .service-card:nth-child(n+3) { grid-column: span 4; }
+      .service-icon { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: rgba(229,184,76,.16); color: var(--gold-dark); font-size: 1.35rem; font-weight: 900; }
+      .service-card h3 { margin: 30px 0 7px; color: var(--navy); font-size: 1.22rem; line-height: 1.25; }
+      .service-card p { margin: 0; color: var(--muted); }
+
+      .route-section { background: var(--navy); color: var(--white); overflow: hidden; }
+      .route-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 64px; align-items: center; }
+      .route-section h2 { color: var(--white); }
+      .route-section .kicker { color: var(--gold); }
+      .route-copy > p { color: rgba(255,255,255,.7); max-width: 560px; }
+      .route-line { margin: 44px 0 36px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px; }
+      .route-stop { display: grid; gap: 2px; }
+      .route-stop:last-child { text-align: right; }
+      .route-stop strong { font-size: 1.06rem; }
+      .route-stop span { font-size: .78rem; text-transform: uppercase; letter-spacing: .13em; color: var(--gold); }
+      .route-track { position: relative; height: 2px; background: rgba(255,255,255,.25); }
+      .route-track::before, .route-track::after { content: ""; position: absolute; top: 50%; width: 12px; height: 12px; border: 3px solid var(--gold); background: var(--navy); border-radius: 50%; transform: translateY(-50%); }
+      .route-track::before { left: 0; }
+      .route-track::after { right: 0; }
+      .route-track i { position: absolute; left: 45%; top: 50%; width: 30px; height: 18px; border-radius: 8px 8px 4px 4px; background: var(--white); transform: translate(-50%, -50%); box-shadow: -7px 8px 0 -5px var(--gold), 7px 8px 0 -5px var(--gold); }
+      .route-media { position: relative; min-height: 520px; }
+      .route-photo { position: absolute; object-fit: cover; border-radius: 28px; box-shadow: var(--shadow); }
+      .route-photo.tetela { inset: 0 18% 26% 0; width: 82%; height: 74%; }
+      .route-photo.puebla { right: 0; bottom: 0; width: 58%; height: 51%; border: 8px solid var(--navy); }
+      .photo-label { position: absolute; z-index: 2; padding: 10px 14px; border-radius: 12px; background: rgba(7,18,57,.84); backdrop-filter: blur(8px); font-size: .82rem; font-weight: 750; }
+      .label-tetela { top: 18px; left: 18px; }
+      .label-puebla { right: 14px; bottom: 14px; }
+
+      .vehicle { background: var(--white); }
+      .vehicle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+      .vehicle-card { position: relative; overflow: hidden; border-radius: 30px; background: #e8ebef; min-height: 480px; box-shadow: var(--shadow); }
+      .vehicle-card img { width: 100%; height: 480px; object-fit: cover; }
+      .vehicle-badge { position: absolute; left: 20px; bottom: 20px; padding: 12px 16px; color: var(--white); background: rgba(7,18,57,.88); backdrop-filter: blur(8px); border-radius: 14px; font-weight: 800; }
+      .vehicle-copy p { color: var(--muted); font-size: 1.07rem; }
+      .check-list { list-style: none; padding: 0; margin: 28px 0 34px; display: grid; gap: 12px; }
+      .check-list li { display: flex; align-items: center; gap: 12px; font-weight: 700; color: var(--navy); }
+      .check-list li::before { content: "✓"; width: 28px; height: 28px; flex: 0 0 auto; border-radius: 50%; display: grid; place-items: center; background: rgba(229,184,76,.2); color: var(--gold-dark); }
+
+      .contact { padding-bottom: 30px; }
+      .contact-panel { position: relative; overflow: hidden; display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; padding: clamp(34px, 6vw, 72px); border-radius: 34px; background: var(--navy); color: var(--white); }
+      .contact-panel::after { content: "VP"; position: absolute; right: -22px; bottom: -95px; color: rgba(255,255,255,.035); font-family: Georgia, serif; font-size: 17rem; font-weight: 800; line-height: 1; }
+      .contact-panel h2 { color: var(--white); }
+      .contact-panel p { color: rgba(255,255,255,.72); }
+      .contact-details { position: relative; z-index: 1; display: grid; gap: 16px; align-content: center; }
+      .contact-item { padding: 18px 20px; border-radius: 17px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.13); }
+      .contact-item small { display: block; color: var(--gold); text-transform: uppercase; font-size: .72rem; font-weight: 850; letter-spacing: .13em; margin-bottom: 4px; }
+      .contact-item a, .contact-item address { color: var(--white); text-decoration: none; font-style: normal; font-weight: 650; }
+      .contact-item a:hover { text-decoration: underline; }
+
+      footer { padding: 28px 0 100px; color: var(--muted); }
+      .footer-inner { display: flex; justify-content: space-between; gap: 20px; align-items: center; border-top: 1px solid var(--line); padding-top: 24px; }
+      .footer-inner strong { color: var(--navy); }
+      .mobile-contact { display: none; }
+
+      @media (max-width: 860px) {
+        .container { width: min(100% - 28px, 680px); }
+        .topbar { padding-top: 14px; }
+        .nav-call { display: none; }
+        .brand-mark { width: 52px; height: 52px; }
+        .hero { min-height: 680px; }
+        .hero::before { background: linear-gradient(90deg, rgba(5,12,40,.95), rgba(5,12,40,.74)), url("assets/hero-ertiga.png") 66% center / cover no-repeat; }
+        .hero-inner { padding: 130px 0 120px; }
+        h1 { font-size: clamp(3.1rem, 15vw, 5rem); }
+        .section-head, .route-grid, .vehicle-grid, .contact-panel { grid-template-columns: 1fr; gap: 34px; }
+        section { padding: 72px 0; }
+        .service-card, .service-card:nth-child(1), .service-card:nth-child(2), .service-card:nth-child(n+3) { grid-column: span 12; min-height: 180px; }
+        .route-media { min-height: 450px; order: -1; }
+        .vehicle-card, .vehicle-card img { min-height: 360px; height: 360px; }
+        .footer-inner { align-items: flex-start; flex-direction: column; }
+        footer { padding-bottom: 104px; }
+        .mobile-contact { position: fixed; z-index: 30; left: 12px; right: 12px; bottom: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 9px; padding: 9px; background: rgba(7,18,57,.92); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,.13); border-radius: 20px; box-shadow: 0 15px 40px rgba(7,18,57,.26); }
+        .mobile-contact a { min-height: 48px; display: grid; place-items: center; border-radius: 13px; color: var(--white); text-decoration: none; font-weight: 800; }
+        .mobile-contact a:first-child { background: var(--gold); color: var(--navy); }
+      }
+
+      @media (max-width: 520px) {
+        .actions { display: grid; }
+        .btn { width: 100%; }
+        .route-line { grid-template-columns: 1fr; align-items: start; }
+        .route-stop:last-child { text-align: left; }
+        .route-track { width: 2px; height: 68px; margin-left: 6px; }
+        .route-track::before { top: 0; left: 50%; }
+        .route-track::after { top: auto; bottom: 0; left: 50%; }
+        .route-track i { left: 50%; top: 45%; transform: translate(-50%,-50%) rotate(90deg); }
+        .route-media { min-height: 380px; }
+        .section-head { margin-bottom: 30px; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { transition-duration: .01ms !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <a class="brand" href="#inicio" aria-label="Viajes Palma, ir al inicio">
+          <img class="brand-mark" src="assets/logo-viajes-palma.jpg" alt="Logo de Viajes Palma" />
+          <span class="brand-copy"><strong>Palma Viajes</strong><span>Tetela · Puebla</span></span>
+        </a>
+        <a class="nav-call" href="tel:+527971141746">797 114 1746</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="container hero-inner">
+          <p class="eyebrow">Traslados y soluciones de confianza</p>
+          <h1>De Tetela a Puebla, y <span>de vuelta.</span></h1>
+          <p class="hero-lead">Traslado de personas, paquetería, mandados, atención hospitalaria y viajes especiales. Consulta disponibilidad directamente por teléfono o WhatsApp.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://wa.me/527971141746?text=Hola%20Viajes%20Palma%2C%20quisiera%20consultar%20un%20servicio" target="_blank" rel="noopener">Enviar WhatsApp</a>
+            <a class="btn btn-secondary" href="tel:+527971141746">Llamar al 797 114 1746</a>
+          </div>
+          <div class="hero-note"><i aria-hidden="true"></i><span>Servicio sujeto a disponibilidad · Contáctanos para cotizar</span></div>
+        </div>
+      </section>
+
+      <section id="servicios">
+        <div class="container">
+          <div class="section-head">
+            <div><span class="kicker">Lo que hacemos</span><h2>Un viaje para cada necesidad</h2></div>
+            <p>Soluciones prácticas para moverte, enviar algo importante o atender un traslado especial entre la Sierra Norte y la ciudad de Puebla.</p>
+          </div>
+          <div class="services-grid">
+            <article class="service-card"><span class="service-icon" aria-hidden="true">↔</span><div><h3>Tetela ↔ Puebla</h3><p>Traslado de personas en ambos sentidos. Pregunta por disponibilidad y punto de encuentro.</p></div></article>
+            <article class="service-card"><span class="service-icon" aria-hidden="true">□</span><div><h3>Paquetería</h3><p>Envíos entre Tetela y Puebla con atención directa para coordinar entrega y recepción.</p></div></article>
+            <article class="service-card"><span class="service-icon" aria-hidden="true">✓</span><div><h3>Mandados</h3><p>Apoyo con encargos y gestiones que necesitan resolverse fuera de Tetela.</p></div></article>
+            <article class="service-card"><span class="service-icon" aria-hidden="true">+</span><div><h3>Traslados hospitalarios</h3><p>Movilidad programada para consultas, estudios o atención médica.</p></div></article>
+            <article class="service-card"><span class="service-icon" aria-hidden="true">✦</span><div><h3>Viajes especiales</h3><p>Traslados para grupos pequeños, eventos o destinos acordados previamente.</p></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="route-section" aria-labelledby="ruta-title">
+        <div class="container route-grid">
+          <div class="route-copy">
+            <span class="kicker">Nuestra ruta</span>
+            <h2 id="ruta-title">Conectamos la sierra con la ciudad</h2>
+            <p>Coordinamos cada servicio de manera directa para darte una respuesta clara según el día, el horario y tu necesidad.</p>
+            <div class="route-line" aria-label="Ruta de Tetela de Ocampo a Puebla">
+              <div class="route-stop"><strong>Tetela</strong><span>Origen</span></div>
+              <div class="route-track" aria-hidden="true"><i></i></div>
+              <div class="route-stop"><strong>Puebla</strong><span>Destino</span></div>
+            </div>
+            <a class="btn btn-primary" href="https://wa.me/527971141746?text=Hola%2C%20quiero%20consultar%20un%20traslado%20entre%20Tetela%20y%20Puebla" target="_blank" rel="noopener">Consultar mi traslado</a>
+          </div>
+          <div class="route-media" aria-label="Imágenes de Tetela de Ocampo y del Centro de Puebla">
+            <img class="route-photo tetela" src="assets/tetela-de-ocampo.jpg" alt="Vista de Tetela de Ocampo, Puebla" />
+            <span class="photo-label label-tetela">Tetela de Ocampo</span>
+            <img class="route-photo puebla" src="assets/centro-puebla.jpg" alt="Centro Histórico de Puebla" />
+            <span class="photo-label label-puebla">Centro de Puebla</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="vehicle" aria-labelledby="unidad-title">
+        <div class="container vehicle-grid">
+          <div class="vehicle-card">
+            <img src="assets/ertiga-blanca.jpg" alt="Suzuki Ertiga 2024 blanca, vehículo representativo de Viajes Palma" />
+            <span class="vehicle-badge">Imagen representativa · Ertiga 2024</span>
+          </div>
+          <div class="vehicle-copy">
+            <span class="kicker">Nuestro vehículo</span>
+            <h2 id="unidad-title">Comodidad para el camino</h2>
+            <p>Viajamos en una Suzuki Ertiga 2024 color blanco, una unidad pensada para traslados cómodos de personas y equipaje.</p>
+            <ul class="check-list">
+              <li>Atención directa para coordinar tu servicio</li>
+              <li>Espacio versátil para pasajeros y equipaje</li>
+              <li>Servicios planeados según tu necesidad</li>
+            </ul>
+            <a class="btn btn-primary" href="tel:+527971141746">Solicitar información</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contacto">
+        <div class="container">
+          <div class="contact-panel">
+            <div>
+              <span class="kicker">Contacto</span>
+              <h2>Cuéntanos qué necesitas transportar</h2>
+              <p>Escríbenos o llama para consultar disponibilidad, horario y costo de tu servicio.</p>
+              <div class="actions">
+                <a class="btn btn-primary" href="https://wa.me/527971141746?text=Hola%20Viajes%20Palma%2C%20quisiera%20pedir%20informaci%C3%B3n" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+              </div>
+            </div>
+            <div class="contact-details">
+              <div class="contact-item"><small>Teléfono</small><a href="tel:+527971141746">797 114 1746</a></div>
+              <div class="contact-item"><small>Dirección</small><address>C. Sin Nombre S/N, 4ta Secc.<br />San Nicolás Tetela, Puebla<br />C.P. 73647</address></div>
+              <div class="contact-item"><small>Ubicación</small><a href="https://www.google.com/maps/search/?api=1&query=San%20Nicol%C3%A1s%20Tetela%2C%20Puebla%2073647" target="_blank" rel="noopener">Abrir en Google Maps</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <span><strong>Viajes Palma</strong> · Tetela ↔ Puebla<br /><small>Traslados, paquetería y mandados</small></span>
+        <small>Fotos: <a href="https://commons.wikimedia.org/wiki/File:Tetela_de_Ocampo_5-Ene-06.jpg" target="_blank" rel="noopener">Aníbal Manzano González, CC BY 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:2024_Suzuki_Ertiga_1.5_GLX_Hybrid_in_Snow_White_Pearl,_front_right,_06-16-2024.jpg" target="_blank" rel="noopener">Ethan Llamas, CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Catedral_de_Puebla_(toma_cenital)_desde_un_dron_02.jpg" target="_blank" rel="noopener">Luisalvaz, CC0</a>. Imágenes recortadas para la página.</small>
+      </div>
+    </footer>
+
+    <nav class="mobile-contact" aria-label="Contacto rápido">
+      <a href="https://wa.me/527971141746?text=Hola%20Viajes%20Palma%2C%20quisiera%20consultar%20un%20servicio" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="tel:+527971141746">Llamar</a>
+    </nav>
+  </body>
+</html>
+
